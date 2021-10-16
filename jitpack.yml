@@ -2,3 +2,6 @@ before_install:
    - source "$HOME/.sdkman/bin/sdkman-init.sh"
    - sdk install java
    - sdk use java 17.0.0-tem
+install:
+   - mvn clean install -DskipTests
+   - cd jplag && mvn clean generate-sources package assembly:single
